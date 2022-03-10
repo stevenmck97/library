@@ -11,9 +11,8 @@ function Book(title, author, pages, read) {
 }
 
 function displayBooks() {
-    for (book in myLibrary) {
-        createBookCard(myLibrary[book]);
-    }
+    element = myLibrary.length - 1;
+    createBookCard(myLibrary[element]);
 }
 
 function addBookToLibrary() {
