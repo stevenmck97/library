@@ -1,0 +1,11 @@
+.display-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+
+.book-card {
+    background-color: #bccbde;
+    box-shadow: 2px 3px 2px 1px black;
+}
