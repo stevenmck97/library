@@ -26,6 +26,7 @@ function addBookToLibrary() {
     let newBook = new Book(bookTitle, bookAuthor, bookPages, bookRead);
     myLibrary.push(newBook);
     displayBooks();
+    console.log(myLibrary);
 }
 
 function createBookCard(book) {
@@ -35,6 +36,7 @@ function createBookCard(book) {
     const pages = document.createElement("p");
     const read = document.createElement("p");
     const removeBtn = document.createElement("button");
+    const readBtn = document.createElement("button");
 
     bookCard.classList.add("book-card");
 
@@ -46,16 +48,29 @@ function createBookCard(book) {
         // removeBtn.parentElement.remove(bookCard);
     });
 
-    title.textContent = `"${book.title}"`;
-    author.textContent = book.author;
-    pages.textContent = `${book.pages} pages`;
-    read.textContent = book.read;
+    readBtn.addEventListener("click", () => {
+        if (book.read === "yes") {
+            book.read = "no";
+            read.textContent = "no";
+        } else if (book.read === "no") {
+            book.read = "yes";
+            read.textContent = "yes";
+        }
+        console.log(myLibrary);
+    });
+
+    title.textContent = `Title: "${book.title}"`;
+    author.textContent = `Author: ${book.author}`;
+    pages.textContent = `Pages: ${book.pages} pages`;
+    read.textContent = `Finished Reading: ${book.read}`;
     removeBtn.textContent = "Remove";
+    readBtn.textContent = "Read Status";
 
     bookCard.appendChild(title);
     bookCard.appendChild(author);
     bookCard.appendChild(pages);
     bookCard.appendChild(read);
+    bookCard.appendChild(readBtn);
     bookCard.appendChild(removeBtn);
     booksContainer.appendChild(bookCard);
 }
