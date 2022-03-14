@@ -9,20 +9,26 @@
         <title>Library</title>
     </head>
     <body>
-        <div class="form-container">
-            <label for="title">Title</label>
-            <input type="text" id="title" name="title" />
+        <button id="modalBtn">New Book</button>
+        <div class="modal" id="myModal">
+            <div class="form-container modal-content">
+                <span class="close">&times;</span>
+                <label for="title">Title</label>
+                <input type="text" id="title" name="title" />
 
-            <label for="author">Author</label>
-            <input type="text" id="author" name="author" />
+                <label for="author">Author</label>
+                <input type="text" id="author" name="author" />
 
-            <label for="pages">No. of pages</label>
-            <input type="number" id="pages" name="pages" />
+                <label for="pages">No. of pages</label>
+                <input type="number" id="pages" name="pages" />
 
-            <label for="read">Read Status</label>
-            <input type="text" id="read" name="read" />
+                <label for="read">Read Status</label>
+                <input type="text" id="read" name="read" />
 
-            <button id="addBtn" onclick="addBookToLibrary()">Add Book</button>
+                <button id="addBtn" onclick="addBookToLibrary()">
+                    Add book
+                </button>
+            </div>
         </div>
         <div class="display-container"></div>
     </body>

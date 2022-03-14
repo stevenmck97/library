@@ -2,6 +2,9 @@
 let myLibrary = [];
 const booksContainer = document.querySelector(".display-container");
 const addBookBtn = document.querySelector("#addBtn");
+const modal = document.getElementById("myModal");
+const btn = document.getElementById("modalBtn");
+const span = document.getElementsByClassName("close")[0];
 
 function Book(title, author, pages, read) {
     this.title = title;
@@ -47,3 +50,17 @@ function createBookCard(book) {
 
     booksContainer.appendChild(bookCard);
 }
+
+btn.addEventListener("click", () => {
+    modal.style.display = "block";
+});
+
+span.addEventListener("click", () => {
+    modal.style.display = "none";
+});
+
+window.addEventListener("click", (e) => {
+    if (e.target == modal) {
+        modal.style.display = "none";
+    }
+});
