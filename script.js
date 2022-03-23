@@ -6,11 +6,18 @@ const modal = document.getElementById("myModal");
 const btn = document.getElementById("modalBtn");
 const span = document.getElementsByClassName("close")[0];
 
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+class Book {
+    constructor(
+        title = "Unknown",
+        author = "Unknown",
+        pages = "0",
+        read = "no"
+    ) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
 }
 
 function displayBooks() {
